@@ -6,7 +6,7 @@
 
 using namespace std;
 
-ll power(ll a, ll b)
+ll power(ll a, ll b)    // a = base, b = exponent
 {
         if(b == 0)
                 return 1;
@@ -17,7 +17,7 @@ ll power(ll a, ll b)
         ll tmp = power(a, b/2);
         ll result = tmp*tmp;
         
-        if(b%2 == 1)
+        if(b%2 == 1) // When the exponent is even value
                 result *= a;
         
         return result;
