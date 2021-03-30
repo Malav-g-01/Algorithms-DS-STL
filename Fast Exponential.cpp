@@ -4,7 +4,7 @@
 #include<bits/stdc++.h>
 #define ll long long
 
-using namesapce std;
+using namespace std;
 
 ll power(ll a, ll b)
 {
