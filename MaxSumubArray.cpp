@@ -1,3 +1,9 @@
+/*
+	Author :- Malav Gajjar
+	
+ This is Kaden's Algorithm to find the maximum sum sub array
+ 
+*/
 #include<bits/stdc++.h> 
 using namespace std ; 
  
