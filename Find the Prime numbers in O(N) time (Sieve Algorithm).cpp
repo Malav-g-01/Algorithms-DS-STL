@@ -1,5 +1,9 @@
 /*
 	Author :- Malav Gajjar
+	
+when prime[i] is 0 it means that i is the prime number.
+First of all we will mark all the non prime numbers(as 1) in the array prime[]
+Then count the number of prime numbers <= n.
 */
 
 #include<bits/stdc++.h>
