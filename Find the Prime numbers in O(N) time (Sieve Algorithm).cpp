@@ -21,7 +21,7 @@ void sieve()
 	{
 		if(!prime[i])
 		{
-			for(ll j=i*i; j<=N; j++)
+			for(ll j=i*i; j<=N; j+=i)
 				prime[j] = 1;
 		}
 	}
