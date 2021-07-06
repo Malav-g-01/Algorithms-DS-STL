@@ -179,6 +179,50 @@ public:
 
 		return newHead;
 	}
+
+	void reverseFirstKNodes(ll k){
+		node *t = head;
+
+		while(k--)
+			t = t->next;
+
+		node *nextNode, *curNode = head, *prevNode = NULL;
+
+		while(curNode != t){
+			nextNode = nextNode->next;
+			curNode->next = prevNode;
+			prevNode = curNode;
+			curNode = nextNode;
+		}
+
+		head->next = t;
+		head = prevNode;
+	}
+
+	node *reverseK(node *&tmp, ll k){
+		node* prevNode = NULL;
+		node* curNode = tmp;
+		node* nextNode;
+		ll cnt=0;
+
+		while(curNode and cnt<k){
+			nextNode = curNode->next;
+			curNode->next =  prevNode;
+			prevNode = curNode;
+			curNode = nextNode;
+			cnt++;
+		}
+
+		if(nextNode)
+			tmp->next = reverseK(nextNode, k);
+
+		return prevNode;
+	}
+
+	void reverse2(ll k){
+		node *t = reverseK(head, k);
+		head = t;
+	}
 };
 
 int main(int argc, char const *argv[]) {
@@ -191,13 +235,17 @@ int main(int argc, char const *argv[]) {
 
 	linkedList x(n);
 	
-	for(ll i=0; i<5; i++)
+	for(ll i=0; i<12; i++)
 		x.insertAtTail(i);
 
 	x.print();
-	x.reverse();
+	/*x.reverse();
 	x.print();
 	x.head = x.recursiveReverse(x.head);
+	x.print();
+	x.reverseFirstKNodes(6);
+	x.print();*/
+	x.reverse2(7);
 	x.print();
 
 	#ifndef ONLINE_JUDGE 
